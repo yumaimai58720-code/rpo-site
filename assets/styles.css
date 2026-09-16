@@ -1,0 +1,418 @@
+/* ==========================================================================
+   デザイントークン
+   コンセプト: 桜島・錦江湾・薩摩の柑橘(さつま)・火山灰の質感を軸にした
+   「地方の編集部」のような、落ち着いた信頼感のあるトーン。
+   ========================================================================== */
+
+:root {
+  /* Color: 火山灰の紙 / 藍の夜 / さつまオレンジ / 錦江湾の青 */
+  --c-paper: #ECE8E0;       /* 背景: 火山灰混じりの紙 */
+  --c-paper-deep: #E2DDD1;  /* セクション区切りの背景 */
+  --c-ink: #20241F;         /* 本文・見出し: 竹林の影のような深緑黒 */
+  --c-ink-soft: #4B4E45;    /* 補助テキスト */
+  --c-accent: #DD7A2C;      /* さつま(柑橘)オレンジ: メインアクセント */
+  --c-accent-deep: #B85E1C; /* オレンジのホバー・濃色 */
+  --c-bay: #2E5C5E;         /* 錦江湾ブルーグリーン: セカンダリ */
+  --c-line: #C7BFAE;        /* 罫線・境界 */
+  --c-card: #F5F2EA;        /* カード背景(紙より少し明るい) */
+
+  /* Type */
+  --f-display: "Shippori Mincho", serif;
+  --f-body: "Zen Kaku Gothic New", sans-serif;
+
+  --fs-hero: clamp(2.1rem, 5vw, 3.4rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.1rem);
+  --fs-h3: 1.15rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  --radius: 3px;
+  --max-w: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  font-size: var(--fs-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--c-line);
+  padding: 20px 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+.logo span { color: var(--c-accent); }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: var(--fs-small);
+}
+.btn-cta {
+  background: var(--c-ink);
+  color: var(--c-paper);
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-size: var(--fs-small);
+  white-space: nowrap;
+}
+.btn-cta:hover { background: var(--c-accent-deep); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 72px 0 88px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-eyebrow {
+  color: var(--c-bay);
+  font-size: var(--fs-small);
+  margin-bottom: 18px;
+  border-left: 3px solid var(--c-accent);
+  padding-left: 10px;
+}
+.hero h1 {
+  font-size: var(--fs-hero);
+  margin-bottom: 24px;
+}
+.hero p.lead {
+  color: var(--c-ink-soft);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: 32px;
+}
+.hero-actions { display: flex; gap: 16px; align-items: center; }
+.btn-primary {
+  background: var(--c-accent);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: var(--radius);
+  font-size: var(--fs-body);
+}
+.btn-primary:hover { background: var(--c-accent-deep); }
+.link-secondary {
+  font-size: var(--fs-small);
+  border-bottom: 1px solid var(--c-ink);
+  padding-bottom: 2px;
+}
+.hero-art { width: 100%; height: auto; }
+
+/* ---------- Stats strip ---------- */
+.stats {
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  padding: 28px 0;
+}
+.stats .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.stat b {
+  font-family: var(--f-display);
+  font-size: 1.6rem;
+  display: block;
+}
+.stat span {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+
+/* ---------- Section generic ---------- */
+.section { padding: 88px 0; }
+.section.alt { background: var(--c-paper-deep); }
+.section-head { margin-bottom: 48px; max-width: 56ch; }
+.section-head .kicker {
+  color: var(--c-bay);
+  font-size: var(--fs-small);
+  display: block;
+  margin-bottom: 10px;
+}
+.section-head h2 { font-size: var(--fs-h2); }
+.section-head p { color: var(--c-ink-soft); margin-top: 14px; }
+
+/* ---------- Problem grid (課題) ---------- */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--c-line);
+  border: 1px solid var(--c-line);
+}
+.problem-card {
+  background: var(--c-paper);
+  padding: 32px 28px;
+}
+.problem-card h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: 12px;
+}
+.problem-card p {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+
+/* ---------- Service list (非対称) ---------- */
+.service-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--c-line);
+}
+.service-row:last-child { border-bottom: 1px solid var(--c-line); }
+.service-row h3 {
+  font-size: var(--fs-h3);
+  color: var(--c-accent-deep);
+}
+.service-row p { color: var(--c-ink-soft); }
+
+/* ---------- Area badges (対応エリア) ---------- */
+.area-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.area-badge {
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: var(--fs-small);
+  background: var(--c-card);
+}
+.area-badge.is-current {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: #fff;
+}
+
+/* ---------- Profile ---------- */
+.profile {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+}
+.profile h3 { font-size: var(--fs-h3); margin-bottom: 6px; }
+.profile .role { color: var(--c-bay); font-size: var(--fs-small); margin-bottom: 16px; display: block; }
+.profile p { color: var(--c-ink-soft); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--c-ink);
+  color: var(--c-paper);
+  padding: 64px 0;
+  text-align: left;
+}
+.cta-band h2 {
+  color: #fff;
+  font-size: var(--fs-h2);
+  margin-bottom: 16px;
+}
+.cta-band p { color: #C8C4B8; margin-bottom: 28px; max-width: 50ch; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 40px 0;
+  font-size: var(--fs-small);
+  color: var(--c-ink-soft);
+}
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ---------- Reasons (選ばれる理由) ---------- */
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.reason-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 28px;
+  padding: 36px 0;
+  border-top: 1px solid var(--c-line);
+}
+.reason-row:last-child { border-bottom: 1px solid var(--c-line); }
+.reason-mark {
+  font-family: var(--f-display);
+  font-size: 2.2rem;
+  color: var(--c-accent);
+  line-height: 1;
+}
+.reason-row h3 { font-size: var(--fs-h3); margin-bottom: 10px; }
+.reason-row p { color: var(--c-ink-soft); }
+
+/* ---------- Process steps (導入フロー) ---------- */
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.process-step {
+  border-top: 3px solid var(--c-accent);
+  padding-top: 18px;
+}
+.process-step .num {
+  font-family: var(--f-display);
+  color: var(--c-bay);
+  font-size: var(--fs-small);
+  display: block;
+  margin-bottom: 8px;
+}
+.process-step h3 { font-size: 1rem; margin-bottom: 8px; }
+.process-step p { color: var(--c-ink-soft); font-size: var(--fs-small); }
+
+/* ---------- FAQ ---------- */
+.faq-list { border-top: 1px solid var(--c-line); }
+.faq-item { border-bottom: 1px solid var(--c-line); }
+.faq-item summary {
+  padding: 22px 4px;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  color: var(--c-accent);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p {
+  padding: 0 4px 22px;
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 760px) {
+  .reason-row { grid-template-columns: 1fr; gap: 8px; }
+  .process { grid-template-columns: 1fr 1fr; }
+}
+/* ---------- Blog article ---------- */
+.article-header {
+  padding: 56px 0 32px;
+  border-bottom: 1px solid var(--c-line);
+}
+.article-header .kicker { color: var(--c-bay); font-size: var(--fs-small); }
+.article-header h1 {
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  margin: 14px 0 18px;
+}
+.article-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--c-ink-soft);
+  font-size: var(--fs-small);
+}
+.article-body {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+.article-body h2 {
+  font-size: 1.35rem;
+  margin: 44px 0 18px;
+  padding-top: 4px;
+}
+.article-body h2:first-child { margin-top: 0; }
+.article-body h3 {
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 28px 0 10px;
+}
+.article-body p { margin: 0 0 20px; color: var(--c-ink); }
+.article-body ul, .article-body ol {
+  margin: 0 0 20px;
+  padding-left: 1.3em;
+  color: var(--c-ink);
+}
+.article-body li { margin-bottom: 8px; }
+.article-lead {
+  font-size: 1.05rem;
+  color: var(--c-ink-soft);
+  border-left: 3px solid var(--c-accent);
+  padding-left: 16px;
+  margin: 0 0 28px;
+}
+.article-cta {
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  padding: 28px;
+  border-radius: var(--radius);
+  margin: 40px 0;
+}
+.article-cta p { margin-bottom: 16px; color: var(--c-ink-soft); }
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+}
+.blog-list-item {
+  display: block;
+  padding: 24px 0;
+  border-top: 1px solid var(--c-line);
+}
+.blog-list-item:last-child { border-bottom: 1px solid var(--c-line); }
+.blog-list-item .tag { color: var(--c-bay); font-size: var(--fs-small); }
+.blog-list-item h3 { font-size: 1.05rem; margin: 8px 0 6px; }
+.blog-list-item p { color: var(--c-ink-soft); font-size: var(--fs-small); margin: 0; }
+
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .service-row { grid-template-columns: 1fr; gap: 8px; }
+  .profile { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}

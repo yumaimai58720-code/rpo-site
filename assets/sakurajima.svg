@@ -1,0 +1,39 @@
+<svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="桜島と錦江湾のシルエット">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ECE8E0"/>
+      <stop offset="100%" stop-color="#E2DDD1"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="380" fill="url(#sky)"/>
+
+  <!-- 噴煙 -->
+  <path d="M256 40 C 268 20, 250 -5, 262 -20" stroke="#4B4E45" stroke-width="2" fill="none" opacity="0.35"/>
+  <ellipse cx="270" cy="30" rx="34" ry="14" fill="#4B4E45" opacity="0.18"/>
+  <ellipse cx="292" cy="18" rx="22" ry="9" fill="#4B4E45" opacity="0.14"/>
+
+  <!-- 桜島の山容 -->
+  <path d="M0 300
+           L 120 220
+           L 165 235
+           L 210 150
+           L 248 95
+           L 262 108
+           L 300 175
+           L 340 205
+           L 410 230
+           L 480 260
+           L 480 380
+           L 0 380 Z"
+        fill="#20241F"/>
+
+  <!-- 火口の赤み -->
+  <circle cx="252" cy="112" r="5" fill="#DD7A2C"/>
+
+  <!-- 錦江湾(海) -->
+  <rect x="0" y="300" width="480" height="80" fill="#2E5C5E" opacity="0.9"/>
+  <path d="M0 308 Q 60 300 120 308 T 240 308 T 360 308 T 480 308"
+        stroke="#ECE8E0" stroke-width="2" fill="none" opacity="0.25"/>
+  <path d="M0 324 Q 60 316 120 324 T 240 324 T 360 324 T 480 324"
+        stroke="#ECE8E0" stroke-width="2" fill="none" opacity="0.18"/>
+</svg>

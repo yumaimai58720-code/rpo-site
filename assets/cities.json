@@ -1,0 +1,21 @@
+[
+  { "slug": "kagoshima-shi",     "name": "鹿児島市",     "reading": "かごしまし",       "industry": "商業・サービス業が集積する県の中心部" },
+  { "slug": "kanoya-shi",        "name": "鹿屋市",       "reading": "かのやし",         "industry": "大隅半島の中心で畜産・農業が盛ん" },
+  { "slug": "makurazaki-shi",    "name": "枕崎市",       "reading": "まくらざきし",     "industry": "かつお節など水産業の街" },
+  { "slug": "akune-shi",         "name": "阿久根市",     "reading": "あくねし",         "industry": "水産業と柑橘栽培が盛ん" },
+  { "slug": "izumi-shi",         "name": "出水市",       "reading": "いずみし",         "industry": "農業と食品関連産業が中心" },
+  { "slug": "ibusuki-shi",       "name": "指宿市",       "reading": "いぶすきし",       "industry": "観光業(温泉)と農業が中心" },
+  { "slug": "nishinoomote-shi",  "name": "西之表市",     "reading": "にしのおもてし",   "industry": "種子島で農業が基幹産業" },
+  { "slug": "tarumizu-shi",      "name": "垂水市",       "reading": "たるみずし",       "industry": "農業・水産業が中心" },
+  { "slug": "satsumasendai-shi", "name": "薩摩川内市",   "reading": "さつませんだいし", "industry": "製造業の事業所が多い" },
+  { "slug": "hioki-shi",         "name": "日置市",       "reading": "ひおきし",         "industry": "農業と観光業が盛ん" },
+  { "slug": "soo-shi",           "name": "曽於市",       "reading": "そおし",           "industry": "和牛など畜産業が基幹産業" },
+  { "slug": "kirishima-shi",     "name": "霧島市",       "reading": "きりしまし",       "industry": "観光業(温泉)と製造業が両立" },
+  { "slug": "ichikikushikino-shi","name": "いちき串木野市","reading": "いちきくしきのし","industry": "遠洋漁業の基地として知られる" },
+  { "slug": "minamisatsuma-shi", "name": "南さつま市",   "reading": "みなみさつまし",   "industry": "農業が基幹産業" },
+  { "slug": "shibushi-shi",      "name": "志布志市",     "reading": "しぶしし",         "industry": "港湾を中心に物流業が発達" },
+  { "slug": "amami-shi",         "name": "奄美市",       "reading": "あまみし",         "industry": "観光業と農業が中心の離島エリア" },
+  { "slug": "minamikyushu-shi",  "name": "南九州市",     "reading": "みなみきゅうしゅうし","industry": "茶業(知覧茶)と農業が盛ん" },
+  { "slug": "isa-shi",           "name": "伊佐市",       "reading": "いさし",           "industry": "米作・焼酎製造が盛ん" },
+  { "slug": "aira-shi",          "name": "姶良市",       "reading": "あいらし",         "industry": "住宅地として発展し製造業も集積" }
+]
