@@ -10,8 +10,9 @@ const industries = JSON.parse(fs.readFileSync(path.join(root, "assets/industries
 const cityContext = JSON.parse(fs.readFileSync(path.join(root, "assets/city-context.json"), "utf-8"));
 const template = fs.readFileSync(path.join(root, "template-blog-combo.html"), "utf-8");
 
-// 対象都市(このフェーズで対応する3市。今後 cities.json の全19市に拡張可能)
-const targetCitySlugs = ["kagoshima-shi", "aira-shi", "kirishima-shi"];
+// 対象都市は city-context.json に登録されている市。
+// 新しい市を city-context.json に追加するだけで、次回実行時に自動的に対象になる。
+const targetCitySlugs = Object.keys(cityContext);
 
 const outDir = path.join(root, "pages", "blog");
 fs.mkdirSync(outDir, { recursive: true });

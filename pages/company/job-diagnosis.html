@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料求人診断｜あなたの求人票、応募が来ない原因が分かります｜今井雄馬</title>
+<meta name="description" content="6つの質問に答えるだけで、求人票の改善ポイントが分かる無料診断です。鹿児島県内の採用代行(RPO)なら今井雄馬。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/styles.css">
+<style>
+  .diag-q {
+    border-top: 1px solid var(--c-line);
+    padding: 28px 0;
+  }
+  .diag-q:last-of-type { border-bottom: 1px solid var(--c-line); }
+  .diag-q p.q-title { font-weight: 500; margin-bottom: 14px; }
+  .diag-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: var(--fs-small);
+    color: var(--c-ink-soft);
+    cursor: pointer;
+  }
+  .diag-opt input { margin-top: 3px; }
+  #diag-result {
+    display: none;
+    margin-top: 40px;
+    padding: 32px;
+    background: var(--c-card);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+  }
+  #diag-result h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  #diag-result p { color: var(--c-ink-soft); }
+  .diag-submit {
+    background: var(--c-accent);
+    color: #fff;
+    border: none;
+    padding: 14px 34px;
+    border-radius: var(--radius);
+    font-size: var(--fs-body);
+    font-family: var(--f-body);
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .diag-submit:hover { background: var(--c-accent-deep); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../../index.html" class="logo">今井雄馬<span>。</span></a>
+    <nav class="nav-links">
+      <a href="../../index.html#service">サービス</a>
+      <a href="../../index.html#area">対応エリア</a>
+      <a href="../../index.html#profile">代表について</a>
+    </nav>
+    <a href="contact.html" class="btn-cta">無料相談を申し込む</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow">無料 求人診断</span>
+      <h1>その求人票、<br>応募が来ない理由が分かります。</h1>
+      <p class="lead">6つの質問に答えるだけ、約1分でできる簡易診断です。結果はその場で表示されます。</p>
+    </div>
+    <img src="../../assets/sakurajima.svg" alt="桜島と錦江湾のイラスト" class="hero-art">
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="article-body">
+    <form id="diag-form">
+
+      <div class="diag-q">
+        <p class="q-title">Q1. 求人票に、1日の仕事の流れなど具体的な仕事内容を記載していますか?</p>
+        <label class="diag-opt"><input type="radio" name="q1" value="2">はい、具体的に記載している</label>
+        <label class="diag-opt"><input type="radio" name="q1" value="1">簡単には記載している</label>
+        <label class="diag-opt"><input type="radio" name="q1" value="0">職種名程度しか記載していない</label>
+      </div>
+
+      <div class="diag-q">
+        <p class="q-title">Q2. 給与・待遇の条件は、具体的に記載していますか?</p>
+        <label class="diag-opt"><input type="radio" name="q2" value="2">具体的な金額・条件を記載している</label>
+        <label class="diag-opt"><input type="radio" name="q2" value="1">幅のある表記(◯万円〜)のみ</label>
+        <label class="diag-opt"><input type="radio" name="q2" value="0">あまり具体的でない</label>
+      </div>
+
+      <div class="diag-q">
+        <p class="q-title">Q3. 現在、求人を掲載している媒体はいくつありますか?</p>
+        <label class="diag-opt"><input type="radio" name="q3" value="2">3つ以上</label>
+        <label class="diag-opt"><input type="radio" name="q3" value="1">1〜2つ</label>
+        <label class="diag-opt"><input type="radio" name="q3" value="0">出していない・分からない</label>
+      </div>
+
+      <div class="diag-q">
+        <p class="q-title">Q4. 応募があった際、一次連絡までにどのくらいかかりますか?</p>
+        <label class="diag-opt"><input type="radio" name="q4" value="2">当日中</label>
+        <label class="diag-opt"><input type="radio" name="q4" value="1">2〜3日以内</label>
+        <label class="diag-opt"><input type="radio" name="q4" value="0">それ以上かかる・決まっていない</label>
+      </div>
+
+      <div class="diag-q">
+        <p class="q-title">Q5. 求人票の内容を、直近半年以内に見直しましたか?</p>
+        <label class="diag-opt"><input type="radio" name="q5" value="2">見直した</label>
+        <label class="diag-opt"><input type="radio" name="q5" value="1">一部だけ見直した</label>
+        <label class="diag-opt"><input type="radio" name="q5" value="0">見直していない</label>
+      </div>
+
+      <div class="diag-q">
+        <p class="q-title">Q6. 自社で働く魅力(教育体制・働きやすさなど)を、求人票で具体的に伝えていますか?</p>
+        <label class="diag-opt"><input type="radio" name="q6" value="2">具体的に伝えている</label>
+        <label class="diag-opt"><input type="radio" name="q6" value="1">少しだけ触れている</label>
+        <label class="diag-opt"><input type="radio" name="q6" value="0">特に伝えていない</label>
+      </div>
+
+      <button type="submit" class="diag-submit">診断する</button>
+    </form>
+
+    <div id="diag-result">
+      <h3 id="diag-result-title"></h3>
+      <p id="diag-result-body"></p>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:16px;">無料相談で詳しく相談する</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>今井雄馬</div>
+    <div>鹿児島県内 採用代行(RPO)・人材紹介サービス</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('diag-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const total = ['q1','q2','q3','q4','q5','q6'].reduce((sum, name) => {
+    const el = form.querySelector(`input[name="${name}"]:checked`);
+    return sum + (el ? parseInt(el.value, 10) : -1);
+  }, 0);
+
+  const unanswered = ['q1','q2','q3','q4','q5','q6'].some(
+    name => !form.querySelector(`input[name="${name}"]:checked`)
+  );
+  if (unanswered) {
+    alert('すべての質問にお答えください。');
+    return;
+  }
+
+  const resultBox = document.getElementById('diag-result');
+  const title = document.getElementById('diag-result-title');
+  const body = document.getElementById('diag-result-body');
+
+  if (total >= 10) {
+    title.textContent = '診断結果: 良好です';
+    body.textContent = '求人票の基本は整っています。それでも応募が伸び悩む場合は、掲載媒体の選定や、応募後の対応スピードなど、別の要因が影響している可能性があります。';
+  } else if (total >= 6) {
+    title.textContent = '診断結果: 改善の余地があります';
+    body.textContent = 'いくつかの項目で見直しの余地があります。特に給与条件の具体性や、応募後の対応スピードは、応募数に直結しやすいポイントです。';
+  } else {
+    title.textContent = '診断結果: 要改善です';
+    body.textContent = '求人票・採用チャネル・対応スピードのいずれも、見直すことで応募数の改善が見込めます。外部人事(採用代行)の活用も選択肢としてご検討ください。';
+  }
+
+  resultBox.style.display = 'block';
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+</body>
+</html>
