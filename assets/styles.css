@@ -205,16 +205,17 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Area badges (対応エリア) ---------- */
 .area-badges {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
   gap: 10px;
 }
 .area-badge {
   border: 1px solid var(--c-line);
   border-radius: 999px;
-  padding: 7px 16px;
+  padding: 9px 14px;
   font-size: var(--fs-small);
   background: var(--c-card);
+  text-align: center;
 }
 .area-badge.is-current {
   background: var(--c-accent);
@@ -409,10 +410,65 @@ a { color: inherit; text-decoration: none; }
 .blog-list-item h3 { font-size: 1.05rem; margin: 8px 0 6px; }
 .blog-list-item p { color: var(--c-ink-soft); font-size: var(--fs-small); margin: 0; }
 
+/* ---------- Keyword highlight (見出し内の強調) ---------- */
+.hl { color: var(--c-accent-deep); }
+
+/* ---------- Circular badges (対応業界など) ---------- */
+.badge-circle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.badge-circle {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-bay);
+  color: var(--c-bay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 8px;
+  background: var(--c-card);
+}
+a.badge-circle:hover { background: var(--c-bay); border-color: var(--c-bay); color: #fff; }
+
+/* ---------- Concept section (写真+主張文) ---------- */
+.concept .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.concept-eyebrow {
+  font-family: var(--f-display);
+  color: var(--c-bay);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 8px;
+}
+.concept .kicker { margin-bottom: 20px; }
+.concept h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.7;
+}
+.concept-visual {
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  padding: 32px;
+}
+.concept-visual img { width: 100%; height: auto; display: block; }
+
 @media (max-width: 760px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .problem-grid { grid-template-columns: 1fr; }
   .service-row { grid-template-columns: 1fr; gap: 8px; }
   .profile { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .concept .wrap { grid-template-columns: 1fr; }
 }
