@@ -35,10 +35,17 @@ MAX_MESSAGE_LENGTH = 4900
 
 
 def load_config() -> dict:
+    # クラウドルーティン実行時は line_config.json をgit管理していないため配置されない。
+    # その場合は環境変数(LINE_CHANNEL_ACCESS_TOKEN / LINE_TO_USER_ID)から読む。
+    env_token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+    env_user_id = os.environ.get("LINE_TO_USER_ID")
+    if env_token and env_user_id:
+        return {"channel_access_token": env_token, "to_user_id": env_user_id}
+
     if not os.path.exists(CONFIG_PATH):
         print(
-            f"エラー: {CONFIG_PATH} が見つかりません。"
-            "SETUP_LINE.mdの手順に従い、channel_access_tokenとto_user_idを設定してください。",
+            f"エラー: {CONFIG_PATH} が見つからず、環境変数 LINE_CHANNEL_ACCESS_TOKEN / "
+            "LINE_TO_USER_ID も設定されていません。SETUP_LINE.mdの手順に従い設定してください。",
             file=sys.stderr,
         )
         sys.exit(1)
