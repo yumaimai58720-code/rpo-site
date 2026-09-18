@@ -138,6 +138,32 @@ a { color: inherit; text-decoration: none; }
   gap: 48px;
   align-items: center;
 }
+
+/* 写真を背景に敷き、半透明オーバーレイ越しに文字を重ねるバリエーション */
+.hero-photo-bg {
+  background-image:
+    linear-gradient(100deg, var(--c-paper) 0%, var(--c-paper) 38%, rgba(236, 232, 224, 0.82) 58%, rgba(236, 232, 224, 0.55) 100%),
+    var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 96px 0;
+}
+.hero-photo-bg .wrap {
+  display: block;
+}
+.hero-photo-bg .hero-copy {
+  max-width: 640px;
+}
+@media (max-width: 760px) {
+  .hero-photo-bg {
+    background-image:
+      linear-gradient(180deg, var(--c-paper) 0%, var(--c-paper) 55%, rgba(236, 232, 224, 0.85) 75%, rgba(236, 232, 224, 0.6) 100%),
+      var(--hero-bg-image);
+  }
+}
 .hero-eyebrow {
   display: inline-block;
   color: var(--c-bay);
