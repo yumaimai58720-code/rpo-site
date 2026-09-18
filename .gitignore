@@ -1,1 +1,4 @@
 scripts/line_config.json
+
+# Local Netlify folder
+.netlify
