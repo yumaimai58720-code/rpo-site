@@ -142,7 +142,7 @@ a { color: inherit; text-decoration: none; }
 /* 写真を背景に敷き、半透明オーバーレイ越しに文字を重ねるバリエーション */
 .hero-photo-bg {
   background-image:
-    linear-gradient(100deg, var(--c-paper) 0%, var(--c-paper) 38%, rgba(236, 232, 224, 0.82) 58%, rgba(236, 232, 224, 0.55) 100%),
+    linear-gradient(100deg, var(--c-paper) 0%, var(--c-paper) 22%, rgba(236, 232, 224, 0.62) 45%, rgba(236, 232, 224, 0.28) 100%),
     var(--hero-bg-image);
   background-size: cover;
   background-position: center;
@@ -160,7 +160,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .hero-photo-bg {
     background-image:
-      linear-gradient(180deg, var(--c-paper) 0%, var(--c-paper) 55%, rgba(236, 232, 224, 0.85) 75%, rgba(236, 232, 224, 0.6) 100%),
+      linear-gradient(180deg, var(--c-paper) 0%, var(--c-paper) 42%, rgba(236, 232, 224, 0.65) 65%, rgba(236, 232, 224, 0.35) 100%),
       var(--hero-bg-image);
   }
 }
