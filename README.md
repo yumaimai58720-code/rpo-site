@@ -29,6 +29,7 @@
 - **代表者名**: 今井雄馬(確定済み。表記は「今井雄馬」でスペースなしに統一)
 - **問い合わせ先メール**: inforecruit58720@gmail.com(確定済み。`pages/company/contact.html` は formsubmit.co 経由の実フォーム、他ページのCTAは `mailto:` または `contact.html` へのリンク)
 - **実績・導入事例**: まだ掲載していない(実績が貯まってから追加する方針。Carrariaのような事例セクションは意図的に省略している)
+- **本番ドメイン**: 未取得のため、`pages/blog/`配下の全記事・`template-blog-combo.html`のOGPメタタグ(og:url, og:image等)とJSON-LD(mainEntityOfPage, LocalBusinessのurl等)は仮に`https://example.com`をベースURLとして記載している。ドメイン取得後、`https://example.com`を実際のドメインに一括置換すること
 
 ## 方針転換の経緯(重要)
 

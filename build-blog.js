@@ -33,9 +33,14 @@ for (const citySlug of targetCitySlugs) {
       continue;
     }
 
+    const today = new Date().toISOString().slice(0, 10);
+
     const html = template
       .replaceAll("{{CITY}}", city.name)
       .replaceAll("{{INDUSTRY}}", ind.name)
+      .replaceAll("{{SLUG}}", fileName.replace(/\.html$/, ""))
+      .replaceAll("{{INDUSTRY_SLUG}}", ind.slug)
+      .replaceAll("{{DATE}}", today)
       .replaceAll("{{BACKGROUND}}", city.background)
       .replace("{{CAUSE1_TITLE}}", ind.problems[0].title)
       .replace("{{CAUSE1_DESC}}", ind.problems[0].desc)
