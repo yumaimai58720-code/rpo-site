@@ -36,6 +36,10 @@
   --shadow-md: 0 12px 32px rgba(32, 36, 31, 0.12);
   --shadow-lg: 0 24px 60px rgba(32, 36, 31, 0.18);
   --max-w: 1080px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * { box-sizing: border-box; }
@@ -882,4 +886,23 @@ a.badge-circle:hover {
   .profile { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .concept .wrap { grid-template-columns: 1fr; }
+}
+
+/* ---------- Motion: press feedback ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary, .btn-cta { transition-timing-function: var(--ease-out); }
+}
+.btn-primary:active, .btn-cta:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+.link-secondary:active { opacity: 0.6; }
+
+/* ---------- Motion: scroll-reveal base state ----------
+   Only applied by motion.js right before animating in, so content
+   stays fully visible if JS/GSAP fails to load or is blocked. */
+.faq-item p { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
