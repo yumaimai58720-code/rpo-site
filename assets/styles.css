@@ -364,14 +364,36 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  counter-reset: service-count;
 }
 #service .wrap > .section-head { grid-column: 1 / -1; }
 .service-row {
+  position: relative;
   background: var(--c-card);
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
-  padding: 28px 26px;
+  padding: 28px 26px 28px 84px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.service-row::before {
+  counter-increment: service-count;
+  content: counter(service-count, decimal-leading-zero);
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-gradient-warm);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
 .service-row:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .service-row h3 {
@@ -380,6 +402,9 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 10px;
 }
 .service-row p { color: var(--c-ink-soft); font-size: var(--fs-small); }
+@media (max-width: 760px) {
+  .service-row { padding-left: 78px; }
+}
 
 /* ---------- Area badges (対応エリア) ---------- */
 .area-badges {
@@ -790,6 +815,33 @@ a.badge-circle:hover {
   left: -60px;
 }
 .concept-visual img { position: relative; width: 100%; height: auto; display: block; }
+
+/* ---------- Photo banner (単一写真、キャプション付き) ---------- */
+.photo-banner {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.photo-banner img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  display: block;
+}
+.photo-banner figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 22px 28px;
+  background: linear-gradient(0deg, rgba(32,36,31,0.78) 0%, rgba(32,36,31,0) 100%);
+  color: #fff;
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .photo-banner img { max-height: 260px; }
+}
 
 /* ---------- Photo strip (写真2枚、伴走イメージ) ---------- */
 .photo-strip {
