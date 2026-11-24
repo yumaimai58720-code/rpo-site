@@ -12,6 +12,22 @@
 </head>
 <body>
 
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="icon-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M8 13h8M8 16.5h8"/></symbol>
+<symbol id="icon-megaphone" viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 0 0 1 1h2l1 4h2l-1-4h1l9 4V5l-9 4H4a1 1 0 0 0-1 1Z"/><path d="M18 9a4 4 0 0 1 0 6"/></symbol>
+<symbol id="icon-send" viewBox="0 0 24 24"><path d="M22 2 15 22 11 13 2 9 22 2Z"/><path d="M22 2 11 13"/></symbol>
+<symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m8.5 15 2 2 4-4"/></symbol>
+<symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="M7 9h10M7 12.5h6"/></symbol>
+<symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V11M10 20V6M16 20v-8"/><path d="M3 20h18"/></symbol>
+<symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+<symbol id="icon-yen-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 7.5 12 13l3.5-5.5M12 13v4M9.5 12h5M9.5 14.5h5"/></symbol>
+<symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></symbol>
+<symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="icon-checklist" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+</defs>
+</svg>
+
 <header class="site-header">
   <div class="wrap">
     <div class="logo">今井雄馬<span>。</span></div>
@@ -29,11 +45,11 @@
   </div>
 </header>
 
-<section class="hero hero-photo-bg" style="--hero-bg-image:url('/assets/photos/hero-collaboration.png')">
+<section class="hero">
   <div class="wrap">
     <div class="hero-copy">
       <span class="hero-eyebrow">鹿児島県内 中小企業向け 採用代行(RPO)</span>
-      <h1>採用担当者がいなくても、<br>採用は<span class="hl">前に進められる。</span></h1>
+      <h1>採用担当者が<br>いなくても、<br>採用は<br><span class="hl">前に進められる。</span></h1>
       <p class="lead">求人票の作成から応募者対応、面接調整まで。採用の実務を、外部人事としてまるごと引き受けます。</p>
       <div class="hero-actions">
         <a href="pages/company/contact.html" class="btn-primary">無料相談を申し込む</a>
@@ -45,14 +61,15 @@
         <span class="trust-badge"><span class="mark">✓</span>業務範囲を柔軟にカスタマイズ</span>
       </div>
     </div>
+    <img src="assets/hero-illustration.svg" alt="デスクでノートパソコンに向かい、窓から桜島が見える採用担当者のイラスト" class="hero-art" width="480" height="480">
   </div>
 </section>
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b>19市</b><span>鹿児島県内 対応エリア</span></div>
-    <div class="stat"><b>月額制</b><span>何名採用しても定額</span></div>
-    <div class="stat"><b>リクルート出身</b><span>代表の採用支援経験</span></div>
+    <div class="stat"><span class="icon-tile" aria-hidden="true"><svg><use href="#icon-pin"></use></svg></span><div><b>19市</b><span>鹿児島県内 対応エリア</span></div></div>
+    <div class="stat"><span class="icon-tile" aria-hidden="true"><svg><use href="#icon-yen-circle"></use></svg></span><div><b>月額制</b><span>何名採用しても定額</span></div></div>
+    <div class="stat"><span class="icon-tile" aria-hidden="true"><svg><use href="#icon-briefcase"></use></svg></span><div><b>リクルート出身</b><span>代表の採用支援経験</span></div></div>
   </div>
 </div>
 
@@ -88,26 +105,32 @@
     </div>
 
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-doc"></use></svg></span>
       <h3>求人票の作成・見直し</h3>
       <p>求職者に届く言葉で、貴社の魅力と求める人物像を言語化します。既存の求人票の改善のみのご依頼も可能です。</p>
     </div>
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-megaphone"></use></svg></span>
       <h3>求人媒体の運用</h3>
       <p>Indeedをはじめとした求人媒体の選定・原稿調整・運用改善まで対応します。</p>
     </div>
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-send"></use></svg></span>
       <h3>スカウト送信</h3>
       <p>ダイレクトリクルーティング媒体での候補者検索・スカウト文面作成・送信まで代行し、応募を待つだけの採用から一歩進めます。</p>
     </div>
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-calendar"></use></svg></span>
       <h3>応募者対応・日程調整</h3>
       <p>応募直後の一次対応から面接日程の調整まで、候補者を待たせない体制で代行します。</p>
     </div>
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-chat"></use></svg></span>
       <h3>面接代行</h3>
       <p>一次面接のみなど、部分的な依頼も承っています。面接後のフィードバックもあわせてご提供します。</p>
     </div>
     <div class="service-row">
+      <span class="icon-tile" aria-hidden="true"><svg><use href="#icon-chart"></use></svg></span>
       <h3>採用データの可視化・改善提案</h3>
       <p>応募数・面接数・内定数・承諾率を継続的に記録し、次の改善策をご提案します。</p>
     </div>
