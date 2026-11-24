@@ -1,23 +1,25 @@
 /* ==========================================================================
    デザイントークン
-   コンセプト: 桜島・錦江湾・薩摩の柑橘(さつま)・火山灰の質感を軸にした
-   「地方の編集部」のような、落ち着いた信頼感のあるトーン。
+   コンセプト: 紺(信頼)+ティール(錦江湾)+白を基調にしたB2B向けの
+   引き締まったトーン。桜島・さつまオレンジは差し色として残す。
    ========================================================================== */
 
 :root {
-  /* Color: 火山灰の紙 / 藍の夜 / さつまオレンジ / 錦江湾の青 */
-  --c-paper: #ECE8E0;       /* 背景: 火山灰混じりの紙 */
-  --c-paper-deep: #E2DDD1;  /* セクション区切りの背景 */
-  --c-ink: #20241F;         /* 本文・見出し: 竹林の影のような深緑黒 */
-  --c-ink-soft: #4B4E45;    /* 補助テキスト */
-  --c-accent: #DD7A2C;      /* さつま(柑橘)オレンジ: メインアクセント */
+  /* Color: 白紙 / 紺の夜 / 錦江湾ティール / さつまオレンジ(差し色) */
+  --c-paper: #F7F9FA;       /* 背景: 白に近いブルーグレー */
+  --c-paper-deep: #EBF1F2;  /* セクション区切りの背景 */
+  --c-ink: #13293F;         /* 本文・見出し: 紺 */
+  --c-ink-soft: #52697C;    /* 補助テキスト */
+  --c-accent: #DD7A2C;      /* さつま(柑橘)オレンジ: 差し色アクセント */
   --c-accent-deep: #B85E1C; /* オレンジのホバー・濃色 */
   --c-accent-light: #F3A968; /* オレンジの明色(グラデーション用) */
-  --c-bay: #2E5C5E;         /* 錦江湾ブルーグリーン: セカンダリ */
-  --c-bay-deep: #1F4244;    /* 錦江湾ブルーグリーンの濃色 */
-  --c-line: #C7BFAE;        /* 罫線・境界 */
-  --c-card: #F5F2EA;        /* カード背景(紙より少し明るい) */
-  --c-gradient-warm: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-deep) 55%, var(--c-bay-deep) 100%);
+  --c-bay: #0E8F76;         /* 錦江湾ティール: メインアクション色 */
+  --c-bay-deep: #0A6F5C;    /* ティールの濃色・ホバー */
+  --c-navy: #16324F;        /* 紺: ヘッダーCTA・全幅帯セクション */
+  --c-navy-deep: #0C2033;   /* 紺の濃色 */
+  --c-line: #D7E0E4;        /* 罫線・境界 */
+  --c-card: #FFFFFF;        /* カード背景 */
+  --c-gradient-warm: linear-gradient(135deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
 
   /* Type */
   --f-display: "Shippori Mincho", serif;
@@ -61,6 +63,9 @@ h1, h2, h3 {
   font-weight: 600;
   line-height: 1.5;
   margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -91,12 +96,16 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--f-display);
   font-size: 1.25rem;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .logo span { color: var(--c-accent); }
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 20px;
   font-size: var(--fs-small);
+  flex-shrink: 1;
+  min-width: 0;
 }
 .nav-links a {
   position: relative;
@@ -106,17 +115,18 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-links a:hover { color: var(--c-accent-deep); }
 .btn-cta {
-  background: var(--c-gradient-warm);
+  background: var(--c-navy);
   color: #fff;
   padding: 11px 20px 11px 24px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   font-size: var(--fs-small);
   font-weight: 600;
   white-space: nowrap;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.16s var(--ease-out), box-shadow 0.16s var(--ease-out), background 0.16s var(--ease-out);
 }
-.btn-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: var(--c-navy-deep); }
+.btn-cta:active { transform: scale(0.97); transition-duration: 0.1s; }
 .btn-primary::after, .btn-cta::after {
   content: "→";
   display: inline-block;
@@ -200,6 +210,9 @@ a { color: inherit; text-decoration: none; }
 .hero h1 {
   font-size: var(--fs-hero);
   margin-bottom: 24px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 .hero p.lead {
   color: var(--c-ink-soft);
@@ -207,19 +220,36 @@ a { color: inherit; text-decoration: none; }
   max-width: 46ch;
   margin-bottom: 32px;
 }
-.hero-actions { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 28px; }
 .btn-primary {
-  background: var(--c-gradient-warm);
+  background: var(--c-bay);
   color: #fff;
-  padding: 16px 28px 16px 34px;
-  border-radius: var(--radius);
+  padding: 16px 30px;
+  border-radius: var(--radius-pill);
   font-size: var(--fs-body);
   font-weight: 600;
   box-shadow: var(--shadow-md);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.16s var(--ease-out), box-shadow 0.16s var(--ease-out), background 0.16s var(--ease-out);
   display: inline-block;
+  border: 1.5px solid transparent;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: var(--c-bay-deep); }
+.btn-primary:active { transform: scale(0.97); transition-duration: 0.1s; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--c-bay);
+  padding: 16px 30px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  border: 1.5px solid var(--c-bay);
+  display: inline-block;
+  transition: transform 0.16s var(--ease-out), background 0.16s var(--ease-out), color 0.16s var(--ease-out);
+}
+.btn-outline:hover { background: var(--c-bay); color: #fff; transform: translateY(-2px); }
+.btn-outline:active { transform: scale(0.97); transition-duration: 0.1s; }
+
 .link-secondary {
   font-size: var(--fs-small);
   font-weight: 600;
@@ -326,8 +356,11 @@ a { color: inherit; text-decoration: none; }
 }
 .stat b {
   font-family: var(--f-display);
-  font-size: 1.4rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--c-bay);
   display: block;
+  line-height: 1.2;
 }
 .stat span {
   color: var(--c-ink-soft);
@@ -337,7 +370,9 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Section generic ---------- */
 .section { padding: 88px 0; }
 .section.alt { background: var(--c-paper-deep); }
-.section-head { margin-bottom: 48px; max-width: 56ch; }
+.section-head { margin-bottom: 48px; max-width: 42em; }
+.section-head h2 { max-width: none; }
+.section-head p { max-width: 56ch; }
 .section-head .kicker {
   display: inline-block;
   color: var(--c-bay);
@@ -352,6 +387,40 @@ a { color: inherit; text-decoration: none; }
 }
 .section-head h2 { font-size: var(--fs-h2); }
 .section-head p { color: var(--c-ink-soft); margin-top: 14px; }
+
+/* ---------- Navy band section (選ばれる理由など、全幅の強弱セクション) ----------
+   自分自身の上辺を斜めにclipし、負のmargin-topで前セクションに少し重ねることで
+   参考サイトのような斜めの区切りを作る(他セクションの背景には依存しない)。 */
+.section.navy-band {
+  position: relative;
+  z-index: 1;
+  background: var(--c-navy);
+  color: #fff;
+  margin-top: -44px;
+  padding-top: calc(88px + 44px);
+  clip-path: polygon(0 44px, 100% 0, 100% 100%, 0 100%);
+}
+.section.navy-band .kicker {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.section.navy-band h2 { color: #fff; }
+.section.navy-band .section-head p { color: rgba(255, 255, 255, 0.7); }
+.section.navy-band .reason-row {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.section.navy-band .reason-row h3 { color: #fff; }
+.section.navy-band .reason-row p { color: rgba(255, 255, 255, 0.68); }
+.section.navy-band .reason-mark { background: var(--c-bay); }
+@media (max-width: 760px) {
+  .section.navy-band {
+    margin-top: -24px;
+    padding-top: calc(64px + 24px);
+    clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
+  }
+}
 
 /* ---------- Problem grid (課題) ---------- */
 .problem-grid {
